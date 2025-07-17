@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	cfg, err := config.New()
+	cfg, err := config.New(`configs/advert.yaml`)
 	if err != nil {
 		return
 	}
 
-	err = pgsql.Init(cfg)
+	err = pgsql.InitAdvert(cfg)
 	if err != nil {
 		slog.Error(err.Error())
 		return
